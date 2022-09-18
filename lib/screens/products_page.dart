@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mi_vender/routes.dart';
 import 'package:mi_vender/screens/mydrawer.dart';
+import 'package:mi_vender/screens/order_pages/order_one.dart';
 import 'package:mi_vender/shared/responsive.dart';
 
 class ProductsPage extends StatelessWidget {
@@ -13,7 +15,12 @@ class ProductsPage extends StatelessWidget {
             "place order",
             style: TextStyle(color: Colors.white),
           ),
-          onPressed: () {},
+          onPressed: () {
+            Routes().push(
+              context,
+              OrderOne(),
+            );
+          },
         ),
         drawer: const MyDrawer(),
         appBar: AppBar(
@@ -76,7 +83,7 @@ class Description extends StatelessWidget {
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
     return Container(
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
         horizontal: 16,
       ),
       width: ismobile ? width * 0.8 : width * 0.35,

@@ -29,6 +29,7 @@ class CTextField extends StatelessWidget {
   final String hint;
   final String? Function(String?) validator;
   final bool isobsecure;
+  final TextInputType textInputType;
   const CTextField({
     super.key,
     required this.width,
@@ -38,6 +39,7 @@ class CTextField extends StatelessWidget {
     required this.hint,
     required this.validator,
     this.isobsecure = false,
+    this.textInputType = TextInputType.name,
   });
 
   @override
@@ -49,6 +51,7 @@ class CTextField extends StatelessWidget {
         controller: controller,
         validator: validator,
         obscureText: isobsecure,
+        keyboardType: textInputType,
         decoration: InputDecoration(
           border: const OutlineInputBorder(),
           label: Text(label),
